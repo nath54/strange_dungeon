@@ -1,0 +1,118 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://menus/help/MainHelp.gd" type="Script" id=1]
+[ext_resource path="res://res/fonts/blockstepped/Blockstepped 3D.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://res/fonts/so-normal/SOBAD___.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://menus/help/Help_Page_1.tscn" type="PackedScene" id=4]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 40
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 50
+font_data = ExtResource( 2 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.356863, 0.356863, 0.356863, 0.207843 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 100
+font_data = ExtResource( 2 )
+
+[node name="MainHelp" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -36.9099
+margin_top = -10.2527
+margin_right = -36.9099
+margin_bottom = -10.2527
+custom_constants/separation = 15
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HSplitContainer" parent="VBoxContainer"]
+margin_right = 1024.0
+margin_bottom = 56.0
+
+[node name="Bt_Menu" type="Button" parent="VBoxContainer/HBoxContainer"]
+margin_right = 79.0
+margin_bottom = 56.0
+custom_fonts/font = SubResource( 6 )
+text = "menu"
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/HBoxContainer"]
+margin_left = 91.0
+margin_right = 1024.0
+margin_bottom = 56.0
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/CenterContainer"]
+margin_left = 347.0
+margin_right = 586.0
+margin_bottom = 56.0
+custom_fonts/font = SubResource( 2 )
+text = "Help :   "
+valign = 1
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer"]
+margin_top = 71.0
+margin_right = 1024.0
+margin_bottom = 75.0
+
+[node name="CenterContainer2" type="CenterContainer" parent="VBoxContainer"]
+margin_top = 90.0
+margin_right = 1024.0
+margin_bottom = 201.0
+
+[node name="HBoxContainer" type="HSplitContainer" parent="VBoxContainer/CenterContainer2"]
+margin_left = 475.0
+margin_right = 548.0
+margin_bottom = 111.0
+
+[node name="BtPrevious" type="Button" parent="VBoxContainer/CenterContainer2/HBoxContainer"]
+margin_right = 61.0
+margin_bottom = 111.0
+custom_styles/normal = SubResource( 3 )
+custom_fonts/font = SubResource( 4 )
+text = "<"
+
+[node name="Panel" type="Control" parent="VBoxContainer/CenterContainer2/HBoxContainer"]
+margin_left = 73.0
+margin_right = 73.0
+margin_bottom = 111.0
+
+[node name="Help_Page_1" parent="VBoxContainer/CenterContainer2/HBoxContainer/Panel" instance=ExtResource( 4 )]
+
+[node name="BtNext" type="Button" parent="VBoxContainer/CenterContainer2/HBoxContainer"]
+margin_left = 69.0
+margin_right = 133.0
+margin_bottom = 111.0
+custom_styles/normal = SubResource( 3 )
+custom_fonts/font = SubResource( 4 )
+text = ">"
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/CenterContainer2/HBoxContainer"]
+margin_left = 137.0
+margin_right = 137.0
+margin_bottom = 111.0
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Bt_Menu" to="." method="_on_Bt_Menu_pressed"]

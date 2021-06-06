@@ -1,0 +1,95 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://res/fonts/8-bit-limit/8blimro.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://res/fonts/so-normal/SOBAD___.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://menus/MainMenu.gd" type="Script" id=3]
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="DynamicFont" id=1]
+size = 55
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 35
+font_data = ExtResource( 2 )
+
+[node name="MainMenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+
+[node name="Panel" type="Panel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+margin_left = 288.0
+margin_top = 103.0
+margin_right = 736.0
+margin_bottom = 497.0
+custom_constants/separation = 50
+
+[node name="Title" type="Label" parent="CenterContainer/VBoxContainer"]
+margin_right = 448.0
+margin_bottom = 59.0
+custom_fonts/font = SubResource( 1 )
+text = "Strange Dungeon"
+align = 1
+valign = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="CenterContainer/VBoxContainer"]
+margin_top = 109.0
+margin_right = 448.0
+margin_bottom = 394.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/VBoxContainer/CenterContainer"]
+margin_left = 172.0
+margin_right = 276.0
+margin_bottom = 285.0
+custom_constants/separation = 15
+
+[node name="BtPlay" type="Button" parent="CenterContainer/VBoxContainer/CenterContainer/VBoxContainer"]
+margin_right = 104.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 100, 60 )
+custom_fonts/font = SubResource( 2 )
+text = "Play"
+
+[node name="BtHelp" type="Button" parent="CenterContainer/VBoxContainer/CenterContainer/VBoxContainer"]
+margin_top = 75.0
+margin_right = 104.0
+margin_bottom = 135.0
+rect_min_size = Vector2( 100, 60 )
+custom_fonts/font = SubResource( 2 )
+text = "Help"
+
+[node name="BtSettings" type="Button" parent="CenterContainer/VBoxContainer/CenterContainer/VBoxContainer"]
+margin_top = 150.0
+margin_right = 104.0
+margin_bottom = 210.0
+rect_min_size = Vector2( 100, 60 )
+custom_fonts/font = SubResource( 2 )
+text = "Settings"
+
+[node name="BtQuit" type="Button" parent="CenterContainer/VBoxContainer/CenterContainer/VBoxContainer"]
+margin_top = 225.0
+margin_right = 104.0
+margin_bottom = 285.0
+rect_min_size = Vector2( 100, 60 )
+custom_fonts/font = SubResource( 2 )
+text = "Quit"
+[connection signal="pressed" from="CenterContainer/VBoxContainer/CenterContainer/VBoxContainer/BtHelp" to="." method="_on_BtHelp_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/CenterContainer/VBoxContainer/BtQuit" to="." method="_on_BtQuit_pressed"]
