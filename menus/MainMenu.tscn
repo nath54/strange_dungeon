@@ -4,14 +4,14 @@
 [ext_resource path="res://res/fonts/so-normal/SOBAD___.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://menus/MainMenu.gd" type="Script" id=3]
 
-[sub_resource type="StyleBoxFlat" id=3]
+[sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0, 0, 0, 1 )
 
-[sub_resource type="DynamicFont" id=1]
+[sub_resource type="DynamicFont" id=2]
 size = 55
 font_data = ExtResource( 1 )
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=3]
 size = 35
 font_data = ExtResource( 2 )
 
@@ -23,7 +23,7 @@ script = ExtResource( 3 )
 [node name="Panel" type="Panel" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_styles/panel = SubResource( 3 )
+custom_styles/panel = SubResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -45,7 +45,7 @@ custom_constants/separation = 50
 [node name="Title" type="Label" parent="CenterContainer/VBoxContainer"]
 margin_right = 448.0
 margin_bottom = 59.0
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 2 )
 text = "Strange Dungeon"
 align = 1
 valign = 1
@@ -65,7 +65,7 @@ custom_constants/separation = 15
 margin_right = 104.0
 margin_bottom = 60.0
 rect_min_size = Vector2( 100, 60 )
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 3 )
 text = "Play"
 
 [node name="BtHelp" type="Button" parent="CenterContainer/VBoxContainer/CenterContainer/VBoxContainer"]
@@ -73,7 +73,7 @@ margin_top = 75.0
 margin_right = 104.0
 margin_bottom = 135.0
 rect_min_size = Vector2( 100, 60 )
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 3 )
 text = "Help"
 
 [node name="BtSettings" type="Button" parent="CenterContainer/VBoxContainer/CenterContainer/VBoxContainer"]
@@ -81,7 +81,7 @@ margin_top = 150.0
 margin_right = 104.0
 margin_bottom = 210.0
 rect_min_size = Vector2( 100, 60 )
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 3 )
 text = "Settings"
 
 [node name="BtQuit" type="Button" parent="CenterContainer/VBoxContainer/CenterContainer/VBoxContainer"]
@@ -89,7 +89,7 @@ margin_top = 225.0
 margin_right = 104.0
 margin_bottom = 285.0
 rect_min_size = Vector2( 100, 60 )
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 3 )
 text = "Quit"
 [connection signal="pressed" from="CenterContainer/VBoxContainer/CenterContainer/VBoxContainer/BtHelp" to="." method="_on_BtHelp_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/CenterContainer/VBoxContainer/BtQuit" to="." method="_on_BtQuit_pressed"]

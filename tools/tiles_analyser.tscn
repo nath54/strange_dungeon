@@ -1,7 +1,18 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://res/tileset/tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://tools/tiles_analyser.gd" type="Script" id=2]
+[ext_resource path="res://res/fonts/blockstepped/Blockstepped.ttf" type="DynamicFontData" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 42
+font_data = ExtResource( 3 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.870588, 0.145098, 0.145098, 0.2 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0, 1, 0.180392, 0.2 )
 
 [node name="TilesAnalyser" type="Node2D"]
 script = ExtResource( 2 )
@@ -19,6 +30,119 @@ tile_data = PoolIntArray( 262150, 3, 0, 262151, 20, 0 )
 [node name="UI" type="Control" parent="CanvasLayer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="n_obj" type="Label" parent="CanvasLayer/UI"]
+margin_left = 66.8073
+margin_top = 110.232
+margin_right = 252.807
+margin_bottom = 166.232
+custom_fonts/font = SubResource( 1 )
+text = "Objet :
+0 / 0"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="n_test" type="Label" parent="CanvasLayer/UI"]
+margin_left = 639.68
+margin_top = 111.902
+margin_right = 1012.68
+margin_bottom = 214.902
+custom_fonts/font = SubResource( 1 )
+text = "Objet test : 
+0 / 0"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="n_cote" type="Label" parent="CanvasLayer/UI"]
+margin_left = 332.366
+margin_top = 56.7862
+margin_right = 615.366
+margin_bottom = 112.786
+custom_fonts/font = SubResource( 1 )
+text = "Haut"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="fleche_droit" type="Label" parent="CanvasLayer/UI"]
+margin_left = 689.926
+margin_top = 393.894
+margin_right = 788.926
+margin_bottom = 449.894
+custom_fonts/font = SubResource( 1 )
+text = "->"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="accept" type="Label" parent="CanvasLayer/UI"]
+margin_left = 689.926
+margin_top = 465.712
+margin_right = 788.926
+margin_bottom = 521.712
+custom_fonts/font = SubResource( 1 )
+text = "Accept"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="refuse" type="Label" parent="CanvasLayer/UI"]
+margin_left = 178.85
+margin_top = 457.361
+margin_right = 313.85
+margin_bottom = 513.361
+custom_fonts/font = SubResource( 1 )
+text = "Refuse"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="fleche_droit2" type="Label" parent="CanvasLayer/UI"]
+margin_left = 192.212
+margin_top = 390.554
+margin_right = 291.212
+margin_bottom = 446.554
+custom_fonts/font = SubResource( 1 )
+text = "<-"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Red" type="Panel" parent="CanvasLayer/UI"]
+margin_left = 168.688
+margin_top = 375.791
+margin_right = 330.688
+margin_bottom = 519.791
+custom_styles/panel = SubResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Green" type="Panel" parent="CanvasLayer/UI"]
+margin_left = 674.754
+margin_top = 385.812
+margin_right = 836.754
+margin_bottom = 529.812
+custom_styles/panel = SubResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
